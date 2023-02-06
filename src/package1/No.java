@@ -1,19 +1,19 @@
 package package1;
 
 public class No {
-    private char key;
+    private int key;
     private No left;
     private No right;
 
-    public No(char key) {
+    public No(int key) {
         this.setKey(key);
     }
 
-    public char getKey() {
+    public int getKey() {
         return key;
     }
 
-    public void setKey(char key) {
+    public void setKey(int key) {
         this.key = key;
     }
 
