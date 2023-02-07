@@ -24,6 +24,8 @@ public class App {
         no6.setLeft(no8);
         no6.setRight(no9);
 
-        binaryTree.simetricTraversal(binaryTree.getRoot());
+        binaryTree.inOrder(binaryTree.getRoot());
+        binaryTree.postorder_traversal(binaryTree.getRoot());
+        System.out.println(binaryTree.calculateHeight(binaryTree.getRoot()));
     }
 }

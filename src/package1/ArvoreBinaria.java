@@ -7,14 +7,40 @@ public class ArvoreBinaria {
         this.root = new No(key);
     }
     
-    public void simetricTraversal(No root) {
+    public void inOrder(No root) {
         if(root.getLeft() != null) {
-            simetricTraversal(root.getLeft());
+            inOrder(root.getLeft());
         }
         System.out.println(root.getKey());
         if(root.getRight() != null) {
-            simetricTraversal(root.getRight());
+            inOrder(root.getRight());
         }
+    }
+
+    public void postorder_traversal(No root) {
+        if(root.getLeft() != null) {
+            postorder_traversal(root.getLeft());
+        }
+        if(root.getRight() != null) {
+            postorder_traversal(root.getRight());
+        }
+        System.out.println(root.getKey());
+    }
+
+    public int calculateHeight(No root) {
+        int heightLeft = 0;
+        int heightRight = 0;
+        
+        if(root.getLeft() != null) {
+            heightLeft = calculateHeight(root.getLeft()); 
+        }
+        if(root.getRight() != null) {
+            heightRight = calculateHeight(root.getRight());
+        }
+        if(heightRight > heightLeft) {
+            return heightRight + 1;
+        }
+        return heightLeft+1;
     }
 
     public No getRoot() {
